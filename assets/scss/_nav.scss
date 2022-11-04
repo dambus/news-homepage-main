@@ -1,0 +1,65 @@
+@use "vars" as v;
+@use "bcolors" as b;
+
+nav {
+  margin-top: 1rem;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ul {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    li {
+      display: inline;
+      &:last-child {
+        a {
+          margin-right: 0;
+        }
+      }
+
+      a {
+        height: 100%;
+        margin-right: 1.2rem;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+  .hamburger {
+    display: none;
+    position: relative;
+    margin: 0;
+    margin-top: 0.25rem;
+    padding: 0;
+
+    span {
+      display: block;
+      width: 2rem;
+      height: 0.25rem;
+      margin-bottom: 5px;
+      position: relative;
+
+      background: v.$dark-blue;
+      border-radius: 3px;
+
+      z-index: 1;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  nav {
+    margin-top: 0;
+    ul {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
+  }
+}
